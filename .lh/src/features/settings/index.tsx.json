@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/features/settings/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1740975754854,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740975760268,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,6 @@\n import { Outlet } from '@tanstack/react-router'\r\n import {\r\n-  IconBrowserCheck,\r\n-  IconNotification,\r\n   IconPalette,\r\n   IconTool,\r\n   IconUser,\r\n } from '@tabler/icons-react'\r\n"
+                }
+            ],
+            "date": 1740975754854,
+            "name": "Commit-0",
+            "content": "import { Outlet } from '@tanstack/react-router'\r\nimport {\r\n  IconBrowserCheck,\r\n  IconNotification,\r\n  IconPalette,\r\n  IconTool,\r\n  IconUser,\r\n} from '@tabler/icons-react'\r\nimport { Separator } from '@/components/ui/separator'\r\nimport { Header } from '@/components/layout/header'\r\nimport { Main } from '@/components/layout/main'\r\nimport { ProfileDropdown } from '@/components/profile-dropdown'\r\nimport { Search } from '@/components/search'\r\nimport { ThemeSwitch } from '@/components/theme-switch'\r\nimport SidebarNav from './components/sidebar-nav'\r\n\r\nexport default function Settings() {\r\n  return (\r\n    <>\r\n      {/* ===== Top Heading ===== */}\r\n      <Header>\r\n        <Search />\r\n        <div className='ml-auto flex items-center space-x-4'>\r\n          <ThemeSwitch />\r\n          <ProfileDropdown />\r\n        </div>\r\n      </Header>\r\n\r\n      <Main fixed>\r\n        <div className='space-y-0.5'>\r\n          <h1 className='text-2xl font-bold tracking-tight md:text-3xl'>\r\n            Settings\r\n          </h1>\r\n          <p className='text-muted-foreground'>\r\n            Manage your account settings and set e-mail preferences.\r\n          </p>\r\n        </div>\r\n        <Separator className='my-4 lg:my-6' />\r\n        <div className='flex flex-1 flex-col space-y-2 overflow-hidden md:space-y-2 lg:flex-row lg:space-x-12 lg:space-y-0'>\r\n          <aside className='top-0 lg:sticky lg:w-1/5'>\r\n            <SidebarNav items={sidebarNavItems} />\r\n          </aside>\r\n          <div className='flex w-full overflow-y-hidden p-1 pr-4'>\r\n            <Outlet />\r\n          </div>\r\n        </div>\r\n      </Main>\r\n    </>\r\n  )\r\n}\r\n\r\nconst sidebarNavItems = [\r\n  {\r\n    title: 'Profile',\r\n    icon: <IconUser size={18} />,\r\n    href: '/settings',\r\n  },\r\n  {\r\n    title: 'Account',\r\n    icon: <IconTool size={18} />,\r\n    href: '/settings/account',\r\n  },\r\n  {\r\n    title: 'Appearance',\r\n    icon: <IconPalette size={18} />,\r\n    href: '/settings/appearance',\r\n  }\r\n]\r\n"
+        }
+    ]
+}

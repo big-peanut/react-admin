@@ -1,0 +1,70 @@
+{
+    "sourceFile": "src/features/users/data/users.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 13,
+            "patches": [
+                {
+                    "date": 1740971622085,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740971768453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,23 +1,27 @@\n-import { faker } from '@faker-js/faker'\r\n+import axios from 'axios'\r\n \r\n-export const users = Array.from({ length: 20 }, () => {\r\n-  const firstName = faker.person.firstName()\r\n-  const lastName = faker.person.lastName()\r\n-  return {\r\n-    id: faker.string.uuid(),\r\n-    firstName,\r\n-    lastName,\r\n-    username: faker.internet\r\n-      .username({ firstName, lastName })\r\n-      .toLocaleLowerCase(),\r\n-    email: faker.internet.email({ firstName }).toLocaleLowerCase(),\r\n-    phoneNumber: faker.phone.number({ style: 'international' }),\r\n-    status: faker.helpers.arrayElement([\r\n-      'active',\r\n-      'inactive',\r\n-      'invited',\r\n-      'suspended',\r\n-    ]),\r\n-    createdTimestamp: faker.date.past(),\r\n+// Define the type for a user\r\n+interface User {\r\n+  id: string\r\n+  fullName: string\r\n+  emailAddress: string\r\n+  mobileNumber: string\r\n+  status: string\r\n+  createdTimestamp: Date\r\n+}\r\n+\r\n+// Function to fetch users from the backend\r\n+export async function fetchUsers(): Promise<User[]> {\r\n+  try {\r\n+    const response = await axios.get<User[]>('https://your-backend-api.com/users')\r\n+    return response.data\r\n+  } catch (error) {\r\n+    console.error('Error fetching users:', error)\r\n+    return []\r\n   }\r\n-})\r\n+}\r\n+\r\n+// Example usage\r\n+fetchUsers().then((users) => {\r\n+  console.log(users)\r\n+})\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1740971782453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \r\n // Function to fetch users from the backend\r\n export async function fetchUsers(): Promise<User[]> {\r\n   try {\r\n-    const response = await axios.get<User[]>('https://your-backend-api.com/users')\r\n+    const response = await axios.get<User[]>('http://localhost:3000/users')\r\n     return response.data\r\n   } catch (error) {\r\n     console.error('Error fetching users:', error)\r\n     return []\r\n"
+                },
+                {
+                    "date": 1740971871847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,21 +1,13 @@\n import axios from 'axios'\r\n+import { userListSchema, User } from './schema'\r\n \r\n-// Define the type for a user\r\n-interface User {\r\n-  id: string\r\n-  fullName: string\r\n-  emailAddress: string\r\n-  mobileNumber: string\r\n-  status: string\r\n-  createdTimestamp: Date\r\n-}\r\n-\r\n // Function to fetch users from the backend\r\n export async function fetchUsers(): Promise<User[]> {\r\n   try {\r\n-    const response = await axios.get<User[]>('http://localhost:3000/users')\r\n-    return response.data\r\n+    const response = await axios.get('http://localhost:3000/users')\r\n+    const users = userListSchema.parse(response.data)\r\n+    return users\r\n   } catch (error) {\r\n     console.error('Error fetching users:', error)\r\n     return []\r\n   }\r\n"
+                },
+                {
+                    "date": 1740971910217,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n // Function to fetch users from the backend\r\n export async function fetchUsers(): Promise<User[]> {\r\n   try {\r\n     const response = await axios.get('http://localhost:3000/users')\r\n+    console.log('response:', response)\r\n     const users = userListSchema.parse(response.data)\r\n     return users\r\n   } catch (error) {\r\n     console.error('Error fetching users:', error)\r\n"
+                },
+                {
+                    "date": 1740972421920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \r\n // Function to fetch users from the backend\r\n export async function fetchUsers(): Promise<User[]> {\r\n   try {\r\n-    const response = await axios.get('http://localhost:3000/users')\r\n+    const response = await axios.get('https://api.conasmyle.in/admins')\r\n     console.log('response:', response)\r\n     const users = userListSchema.parse(response.data)\r\n     return users\r\n   } catch (error) {\r\n"
+                },
+                {
+                    "date": 1740972469179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n // Function to fetch users from the backend\r\n export async function fetchUsers(): Promise<User[]> {\r\n   try {\r\n     const response = await axios.get('https://api.conasmyle.in/admins')\r\n-    console.log('response:', response)\r\n+    console.log('response:', response.data)\r\n     const users = userListSchema.parse(response.data)\r\n     return users\r\n   } catch (error) {\r\n     console.error('Error fetching users:', error)\r\n"
+                },
+                {
+                    "date": 1740972491588,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n // Function to fetch users from the backend\r\n export async function fetchUsers(): Promise<User[]> {\r\n   try {\r\n     const response = await axios.get('https://api.conasmyle.in/admins')\r\n-    console.log('response:', response.data)\r\n+    console.log('response:', response.data.data)\r\n     const users = userListSchema.parse(response.data)\r\n     return users\r\n   } catch (error) {\r\n     console.error('Error fetching users:', error)\r\n"
+                },
+                {
+                    "date": 1740972506892,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n export async function fetchUsers(): Promise<User[]> {\r\n   try {\r\n     const response = await axios.get('https://api.conasmyle.in/admins')\r\n     console.log('response:', response.data.data)\r\n-    const users = userListSchema.parse(response.data)\r\n+    const users = userListSchema.parse(response.data.data)\r\n     return users\r\n   } catch (error) {\r\n     console.error('Error fetching users:', error)\r\n     return []\r\n"
+                },
+                {
+                    "date": 1740972869304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,8 @@\n // Function to fetch users from the backend\r\n export async function fetchUsers(): Promise<User[]> {\r\n   try {\r\n     const response = await axios.get('https://api.conasmyle.in/admins')\r\n-    console.log('response:', response.data.data)\r\n     const users = userListSchema.parse(response.data.data)\r\n     return users\r\n   } catch (error) {\r\n     console.error('Error fetching users:', error)\r\n"
+                },
+                {
+                    "date": 1740973323493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,4 @@\n     console.error('Error fetching users:', error)\r\n     return []\r\n   }\r\n }\r\n-\r\n-// Example usage\r\n-fetchUsers().then((users) => {\r\n-  console.log(users)\r\n-})\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1740982108244,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,52 @@\n import axios from 'axios'\r\n import { userListSchema, User } from './schema'\r\n \r\n-// Function to fetch users from the backend\r\n-export async function fetchUsers(): Promise<User[]> {\r\n+interface FetchUsersParams {\r\n+  page?: number;\r\n+  limit?: number;\r\n+  search?: string;\r\n+  sort?: string;\r\n+  order?: 'asc' | 'desc';\r\n+}\r\n+\r\n+// Function to fetch users from the backend with pagination\r\n+export async function fetchUsers({\r\n+  page = 1,\r\n+  limit = 10,\r\n+  search = '',\r\n+  sort = 'createdTimestamp',\r\n+  order = 'desc'\r\n+}: FetchUsersParams = {}): Promise<{\r\n+  users: User[];\r\n+  totalCount: number;\r\n+  totalPages: number;\r\n+}> {\r\n   try {\r\n-    const response = await axios.get('https://api.conasmyle.in/admins')\r\n+    const response = await axios.get('https://api.conasmyle.in/admins', {\r\n+      params: {\r\n+        page,\r\n+        limit,\r\n+        search,\r\n+        sort,\r\n+        order\r\n+      }\r\n+    })\r\n+    \r\n     const users = userListSchema.parse(response.data.data)\r\n-    return users\r\n+    const totalCount = response.data.meta?.totalCount || users.length\r\n+    const totalPages = Math.ceil(totalCount / limit)\r\n+    \r\n+    return {\r\n+      users,\r\n+      totalCount,\r\n+      totalPages\r\n+    }\r\n   } catch (error) {\r\n     console.error('Error fetching users:', error)\r\n-    return []\r\n+    return {\r\n+      users: [],\r\n+      totalCount: 0,\r\n+      totalPages: 0\r\n+    }\r\n   }\r\n-}\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1740982153841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,10 @@\n         order\r\n       }\r\n     })\r\n \r\n+    console.log('response', response)\r\n+\r\n     const users = userListSchema.parse(response.data.data)\r\n     const totalCount = response.data.meta?.totalCount || users.length\r\n     const totalPages = Math.ceil(totalCount / limit)\r\n \r\n"
+                },
+                {
+                    "date": 1740982207572,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,11 +31,11 @@\n         order\r\n       }\r\n     })\r\n \r\n-    console.log('response', response)\r\n+    console.log('response', response.data)\r\n \r\n-    const users = userListSchema.parse(response.data)\r\n+    const users = userListSchema.parse(response.data.data)\r\n     const totalCount = response.data.meta?.totalCount || users.length\r\n     const totalPages = Math.ceil(totalCount / limit)\r\n \r\n     return {\r\n"
+                }
+            ],
+            "date": 1740971622085,
+            "name": "Commit-0",
+            "content": "import { faker } from '@faker-js/faker'\r\n\r\nexport const users = Array.from({ length: 20 }, () => {\r\n  const firstName = faker.person.firstName()\r\n  const lastName = faker.person.lastName()\r\n  return {\r\n    id: faker.string.uuid(),\r\n    firstName,\r\n    lastName,\r\n    username: faker.internet\r\n      .username({ firstName, lastName })\r\n      .toLocaleLowerCase(),\r\n    email: faker.internet.email({ firstName }).toLocaleLowerCase(),\r\n    phoneNumber: faker.phone.number({ style: 'international' }),\r\n    status: faker.helpers.arrayElement([\r\n      'active',\r\n      'inactive',\r\n      'invited',\r\n      'suspended',\r\n    ]),\r\n    createdTimestamp: faker.date.past(),\r\n  }\r\n})\r\n"
+        }
+    ]
+}

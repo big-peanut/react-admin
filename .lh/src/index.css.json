@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/index.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1740926311376,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1740926311376,
+            "name": "Commit-0",
+            "content": "@tailwind base;\r\n@tailwind components;\r\n@tailwind utilities;\r\n\r\n@layer base {\r\n  :root {\r\n    --background: 0 0% 100%;\r\n    --foreground: 222.2 84% 4.9%;\r\n    --card: 0 0% 100%;\r\n    --card-foreground: 222.2 84% 4.9%;\r\n    --popover: 0 0% 100%;\r\n    --popover-foreground: 222.2 84% 4.9%;\r\n    --primary: 221.2 83.2% 53.3%;\r\n    --primary-foreground: 210 40% 98%;\r\n    --secondary: 210 40% 96.1%;\r\n    --secondary-foreground: 222.2 47.4% 11.2%;\r\n    --muted: 210 40% 96.1%;\r\n    --muted-foreground: 215.4 16.3% 46.9%;\r\n    --accent: 210 40% 96.1%;\r\n    --accent-foreground: 222.2 47.4% 11.2%;\r\n    --destructive: 0 84.2% 60.2%;\r\n    --destructive-foreground: 210 40% 98%;\r\n    --border: 214.3 31.8% 91.4%;\r\n    --input: 214.3 31.8% 91.4%;\r\n    --ring: 221.2 83.2% 53.3%;\r\n    --radius: 0.75rem;\r\n    --chart-1: 12 76% 61%;\r\n    --chart-2: 173 58% 39%;\r\n    --chart-3: 197 37% 24%;\r\n    --chart-4: 43 74% 66%;\r\n    --chart-5: 27 87% 67%;\r\n  }\r\n\r\n  .dark {\r\n    --background: 222.2 84% 4.9%;\r\n    --foreground: 210 40% 98%;\r\n    --card: 222.2 84% 4.9%;\r\n    --card-foreground: 210 40% 98%;\r\n    --popover: 222.2 84% 4.9%;\r\n    --popover-foreground: 210 40% 98%;\r\n    --primary: 217.2 91.2% 59.8%;\r\n    --primary-foreground: 222.2 47.4% 11.2%;\r\n    --secondary: 217.2 32.6% 17.5%;\r\n    --secondary-foreground: 210 40% 98%;\r\n    --muted: 217.2 32.6% 17.5%;\r\n    --muted-foreground: 215 20.2% 65.1%;\r\n    --accent: 217.2 32.6% 17.5%;\r\n    --accent-foreground: 210 40% 98%;\r\n    --destructive: 0 62.8% 30.6%;\r\n    --destructive-foreground: 210 40% 98%;\r\n    --border: 217.2 32.6% 17.5%;\r\n    --input: 217.2 32.6% 17.5%;\r\n    --ring: 224.3 76.3% 48%;\r\n    --chart-1: 220 70% 50%;\r\n    --chart-2: 160 60% 45%;\r\n    --chart-3: 30 80% 55%;\r\n    --chart-4: 280 65% 60%;\r\n    --chart-5: 340 75% 55%;\r\n  }\r\n}\r\n\r\n@layer utilities {\r\n  /* Hide scrollbar for Chrome, Safari and Opera */\r\n  .no-scrollbar::-webkit-scrollbar {\r\n    display: none;\r\n  }\r\n  /* Hide scrollbar for IE, Edge and Firefox */\r\n  .no-scrollbar {\r\n    -ms-overflow-style: none; /* IE and Edge */\r\n    scrollbar-width: none; /* Firefox */\r\n  }\r\n\r\n  .faded-bottom {\r\n    @apply after:pointer-events-none after:absolute after:bottom-0 after:left-0 after:hidden after:h-32 after:w-full after:bg-[linear-gradient(180deg,_transparent_10%,_hsl(var(--background))_70%)] after:md:block;\r\n  }\r\n}\r\n\r\n@layer base {\r\n  * {\r\n    @apply border-border;\r\n    scrollbar-width: thin;\r\n    scrollbar-color: hsl(var(--border)) transparent;\r\n  }\r\n  html {\r\n    @apply overflow-x-hidden;\r\n  }\r\n  body {\r\n    @apply min-h-svh w-full bg-background text-foreground;\r\n  }\r\n}\r\n"
+        }
+    ]
+}

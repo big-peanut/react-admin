@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/features/auth/otp/components/otp-form.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1740976155129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740976429303,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,12 +32,17 @@\n     resolver: zodResolver(formSchema),\r\n     defaultValues: { otp: '' },\r\n   })\r\n \r\n-  function onSubmit() {\r\n+  function onSubmit(data: z.infer<typeof formSchema>) {\r\n     setIsLoading(true)\r\n     toast({\r\n-      title: 'Your Changes Have Been Saved',\r\n+      title: 'You submitted the following values:',\r\n+      description: (\r\n+        <pre className='mt-2 w-[340px] rounded-md bg-slate-950 p-4'>\r\n+          <code className='text-white'>{JSON.stringify(data, null, 2)}</code>\r\n+        </pre>\r\n+      ),\r\n     })\r\n \r\n     setTimeout(() => {\r\n       setIsLoading(false)\r\n"
+                }
+            ],
+            "date": 1740976155129,
+            "name": "Commit-0",
+            "content": "import { HTMLAttributes, useState } from 'react'\r\nimport { z } from 'zod'\r\nimport { useForm } from 'react-hook-form'\r\nimport { zodResolver } from '@hookform/resolvers/zod'\r\nimport { useNavigate } from '@tanstack/react-router'\r\nimport { cn } from '@/lib/utils'\r\nimport { toast } from '@/hooks/use-toast'\r\nimport { Button } from '@/components/ui/button'\r\nimport {\r\n  Form,\r\n  FormControl,\r\n  FormField,\r\n  FormItem,\r\n  FormMessage,\r\n} from '@/components/ui/form'\r\nimport { Input } from '@/components/ui/input'\r\nimport { Separator } from '@/components/ui/separator'\r\nimport { PinInput, PinInputField } from '@/components/pin-input'\r\n\r\ntype OtpFormProps = HTMLAttributes<HTMLDivElement>\r\n\r\nconst formSchema = z.object({\r\n  otp: z.string().min(1, { message: 'Please enter your otp code.' }),\r\n})\r\n\r\nexport function OtpForm({ className, ...props }: OtpFormProps) {\r\n  const navigate = useNavigate()\r\n  const [isLoading, setIsLoading] = useState(false)\r\n  const [disabledBtn, setDisabledBtn] = useState(true)\r\n\r\n  const form = useForm<z.infer<typeof formSchema>>({\r\n    resolver: zodResolver(formSchema),\r\n    defaultValues: { otp: '' },\r\n  })\r\n\r\n  function onSubmit() {\r\n    setIsLoading(true)\r\n    toast({\r\n      title: 'Your Changes Have Been Saved',\r\n    })\r\n\r\n    setTimeout(() => {\r\n      setIsLoading(false)\r\n      navigate({ to: '/' })\r\n    }, 1000)\r\n  }\r\n\r\n  return (\r\n    <div className={cn('grid gap-6', className)} {...props}>\r\n      <Form {...form}>\r\n        <form onSubmit={form.handleSubmit(onSubmit)}>\r\n          <div className='grid gap-2'>\r\n            <FormField\r\n              control={form.control}\r\n              name='otp'\r\n              render={({ field }) => (\r\n                <FormItem className='space-y-1'>\r\n                  <FormControl>\r\n                    <PinInput\r\n                      {...field}\r\n                      className='flex h-10 justify-between'\r\n                      onComplete={() => setDisabledBtn(false)}\r\n                      onIncomplete={() => setDisabledBtn(true)}\r\n                    >\r\n                      {Array.from({ length: 7 }, (_, i) => {\r\n                        if (i === 3)\r\n                          return <Separator key={i} orientation='vertical' />\r\n                        return (\r\n                          <PinInputField\r\n                            key={i}\r\n                            component={Input}\r\n                            className={`${form.getFieldState('otp').invalid ? 'border-red-500' : ''}`}\r\n                          />\r\n                        )\r\n                      })}\r\n                    </PinInput>\r\n                  </FormControl>\r\n                  <FormMessage />\r\n                </FormItem>\r\n              )}\r\n            />\r\n            <Button className='mt-2' disabled={disabledBtn || isLoading}>\r\n              Verify\r\n            </Button>\r\n          </div>\r\n        </form>\r\n      </Form>\r\n    </div>\r\n  )\r\n}\r\n"
+        }
+    ]
+}

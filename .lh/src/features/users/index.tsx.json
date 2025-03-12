@@ -1,0 +1,34 @@
+{
+    "sourceFile": "src/features/users/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1740972019055,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740972888963,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n         <div className='mb-2 flex flex-wrap items-center justify-between space-y-2'>\r\n           <div>\r\n             <h2 className='text-2xl font-bold tracking-tight'>User List</h2>\r\n             <p className='text-muted-foreground'>\r\n-              Manage your users and their roles here.\r\n+              Manage your Admins and their roles here.\r\n             </p>\r\n           </div>\r\n           <UsersPrimaryButtons />\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1740973420448,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n \r\n       <Main>\r\n         <div className='mb-2 flex flex-wrap items-center justify-between space-y-2'>\r\n           <div>\r\n-            <h2 className='text-2xl font-bold tracking-tight'>User List</h2>\r\n+            <h2 className='text-2xl font-bold tracking-tight'>Admin List</h2>\r\n             <p className='text-muted-foreground'>\r\n               Manage your Admins and their roles here.\r\n             </p>\r\n           </div>\r\n"
+                },
+                {
+                    "date": 1740982352077,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n   const [userList, setUserList] = useState<User[]>([])\r\n \r\n   useEffect(() => {\r\n     async function loadUsers() {\r\n-      const users = await fetchUsers()\r\n+      const {users} = await fetchUsers()\r\n       setUserList(users)\r\n     }\r\n \r\n     loadUsers()\r\n"
+                },
+                {
+                    "date": 1740983066253,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n   const [userList, setUserList] = useState<User[]>([])\r\n \r\n   useEffect(() => {\r\n     async function loadUsers() {\r\n-      const { users } = await fetchUsers()\r\n+      const users= await fetchUsers()\r\n       setUserList(users)\r\n     }\r\n \r\n     loadUsers()\r\n"
+                }
+            ],
+            "date": 1740972019055,
+            "name": "Commit-0",
+            "content": "import { useEffect, useState } from 'react'\r\nimport { Header } from '@/components/layout/header'\r\nimport { Main } from '@/components/layout/main'\r\nimport { ProfileDropdown } from '@/components/profile-dropdown'\r\nimport { Search } from '@/components/search'\r\nimport { ThemeSwitch } from '@/components/theme-switch'\r\nimport { columns } from './components/users-columns'\r\nimport { UsersDialogs } from './components/users-dialogs'\r\nimport { UsersPrimaryButtons } from './components/users-primary-buttons'\r\nimport { UsersTable } from './components/users-table'\r\nimport UsersProvider from './context/users-context'\r\nimport { fetchUsers } from './data/users'\r\nimport { User } from './data/schema'\r\n\r\nexport default function Users() {\r\n  const [userList, setUserList] = useState<User[]>([])\r\n\r\n  useEffect(() => {\r\n    async function loadUsers() {\r\n      const users = await fetchUsers()\r\n      setUserList(users)\r\n    }\r\n\r\n    loadUsers()\r\n  }, [])\r\n\r\n  return (\r\n    <UsersProvider>\r\n      <Header fixed>\r\n        <Search />\r\n        <div className='ml-auto flex items-center space-x-4'>\r\n          <ThemeSwitch />\r\n          <ProfileDropdown />\r\n        </div>\r\n      </Header>\r\n\r\n      <Main>\r\n        <div className='mb-2 flex flex-wrap items-center justify-between space-y-2'>\r\n          <div>\r\n            <h2 className='text-2xl font-bold tracking-tight'>User List</h2>\r\n            <p className='text-muted-foreground'>\r\n              Manage your users and their roles here.\r\n            </p>\r\n          </div>\r\n          <UsersPrimaryButtons />\r\n        </div>\r\n        <div className='-mx-4 flex-1 overflow-auto px-4 py-1 lg:flex-row lg:space-x-12 lg:space-y-0'>\r\n          <UsersTable data={userList} columns={columns} />\r\n        </div>\r\n      </Main>\r\n\r\n      <UsersDialogs />\r\n    </UsersProvider>\r\n  )\r\n}"
+        }
+    ]
+}

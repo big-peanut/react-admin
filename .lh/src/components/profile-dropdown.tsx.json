@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/components/profile-dropdown.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1740975290770,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740975327070,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,8 @@\n               Settings\r\n               <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>\r\n             </Link>\r\n           </DropdownMenuItem>\r\n-          <DropdownMenuItem>New Team</DropdownMenuItem>\r\n         </DropdownMenuGroup>\r\n         <DropdownMenuSeparator />\r\n         <DropdownMenuItem>\r\n           Log out\r\n"
+                },
+                {
+                    "date": 1740975362804,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,22 +36,22 @@\n         <DropdownMenuGroup>\r\n           <DropdownMenuItem asChild>\r\n             <Link to='/settings'>\r\n               Profile\r\n-              <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>\r\n+             \r\n             </Link>\r\n           </DropdownMenuItem>\r\n           <DropdownMenuItem asChild>\r\n             <Link to='/settings'>\r\n               Settings\r\n-              <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>\r\n+            \r\n             </Link>\r\n           </DropdownMenuItem>\r\n         </DropdownMenuGroup>\r\n         <DropdownMenuSeparator />\r\n         <DropdownMenuItem>\r\n           Log out\r\n-          <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>\r\n+         \r\n         </DropdownMenuItem>\r\n       </DropdownMenuContent>\r\n     </DropdownMenu>\r\n   )\r\n"
+                },
+                {
+                    "date": 1740975395962,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,8 @@\n   DropdownMenuGroup,\r\n   DropdownMenuItem,\r\n   DropdownMenuLabel,\r\n   DropdownMenuSeparator,\r\n-  DropdownMenuShortcut,\r\n   DropdownMenuTrigger,\r\n } from '@/components/ui/dropdown-menu'\r\n \r\n export function ProfileDropdown() {\r\n"
+                }
+            ],
+            "date": 1740975290770,
+            "name": "Commit-0",
+            "content": "import { Link } from '@tanstack/react-router'\r\nimport { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'\r\nimport { Button } from '@/components/ui/button'\r\nimport {\r\n  DropdownMenu,\r\n  DropdownMenuContent,\r\n  DropdownMenuGroup,\r\n  DropdownMenuItem,\r\n  DropdownMenuLabel,\r\n  DropdownMenuSeparator,\r\n  DropdownMenuShortcut,\r\n  DropdownMenuTrigger,\r\n} from '@/components/ui/dropdown-menu'\r\n\r\nexport function ProfileDropdown() {\r\n  return (\r\n    <DropdownMenu modal={false}>\r\n      <DropdownMenuTrigger asChild>\r\n        <Button variant='ghost' className='relative h-8 w-8 rounded-full'>\r\n          <Avatar className='h-8 w-8'>\r\n            <AvatarImage src='/avatars/01.png' alt='@shadcn' />\r\n            <AvatarFallback>SL</AvatarFallback>\r\n          </Avatar>\r\n        </Button>\r\n      </DropdownMenuTrigger>\r\n      <DropdownMenuContent className='w-56' align='end' forceMount>\r\n        <DropdownMenuLabel className='font-normal'>\r\n          <div className='flex flex-col space-y-1'>\r\n            <p className='text-sm font-medium leading-none'>Sandeep</p>\r\n            <p className='text-xs leading-none text-muted-foreground'>\r\n              sandeepsundarlenka22@gmail.com\r\n            </p>\r\n          </div>\r\n        </DropdownMenuLabel>\r\n        <DropdownMenuSeparator />\r\n        <DropdownMenuGroup>\r\n          <DropdownMenuItem asChild>\r\n            <Link to='/settings'>\r\n              Profile\r\n              <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>\r\n            </Link>\r\n          </DropdownMenuItem>\r\n          <DropdownMenuItem asChild>\r\n            <Link to='/settings'>\r\n              Settings\r\n              <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>\r\n            </Link>\r\n          </DropdownMenuItem>\r\n          <DropdownMenuItem>New Team</DropdownMenuItem>\r\n        </DropdownMenuGroup>\r\n        <DropdownMenuSeparator />\r\n        <DropdownMenuItem>\r\n          Log out\r\n          <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>\r\n        </DropdownMenuItem>\r\n      </DropdownMenuContent>\r\n    </DropdownMenu>\r\n  )\r\n}\r\n"
+        }
+    ]
+}

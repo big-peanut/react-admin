@@ -1,0 +1,54 @@
+{
+    "sourceFile": "src/features/users/data/schema.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1740971359388,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740971417066,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,13 +9,11 @@\n \r\n \r\n const userSchema = z.object({\r\n   id: z.string(),\r\n-  firstName: z.string(),\r\n-  lastName: z.string(),\r\n-  username: z.string(),\r\n-  email: z.string(),\r\n-  phoneNumber: z.string(),\r\n+  fullName: z.string(),\r\n+  emailAddress: z.string(),\r\n+  mobileNumber: z.string(),\r\n   status: userStatusSchema,\r\n   createdAt: z.coerce.date(),\r\n   updatedAt: z.coerce.date(),\r\n })\r\n"
+                },
+                {
+                    "date": 1740971442513,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,9 @@\n   fullName: z.string(),\r\n   emailAddress: z.string(),\r\n   mobileNumber: z.string(),\r\n   status: userStatusSchema,\r\n-  createdAt: z.coerce.date(),\r\n-  updatedAt: z.coerce.date(),\r\n+  createdTimestamp: z.coerce.date(),\r\n })\r\n export type User = z.infer<typeof userSchema>\r\n \r\n export const userListSchema = z.array(userSchema)\r\n"
+                },
+                {
+                    "date": 1740972541866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \r\n \r\n \r\n const userSchema = z.object({\r\n-  id: z.string(),\r\n+  id: z.number(),\r\n   fullName: z.string(),\r\n   emailAddress: z.string(),\r\n   mobileNumber: z.string(),\r\n   status: userStatusSchema,\r\n"
+                },
+                {
+                    "date": 1740972573943,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,9 @@\n \r\n const userSchema = z.object({\r\n   id: z.number(),\r\n   fullName: z.string(),\r\n+  code: z.string(),\r\n   emailAddress: z.string(),\r\n   mobileNumber: z.string(),\r\n   status: userStatusSchema,\r\n   createdTimestamp: z.coerce.date(),\r\n"
+                },
+                {
+                    "date": 1740972737436,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,22 +1,15 @@\n import { z } from 'zod'\r\n \r\n-const userStatusSchema = z.union([\r\n-  z.literal('enabled'),\r\n-  z.literal('disabled'),\r\n-])\r\n-export type UserStatus = z.infer<typeof userStatusSchema>\r\n-\r\n-\r\n-\r\n+// Define the user schema with the updated status field as a boolean\r\n const userSchema = z.object({\r\n   id: z.number(),\r\n   fullName: z.string(),\r\n   code: z.string(),\r\n   emailAddress: z.string(),\r\n   mobileNumber: z.string(),\r\n-  status: userStatusSchema,\r\n+  status: z.boolean(), // Update the status field to be a boolean\r\n   createdTimestamp: z.coerce.date(),\r\n })\r\n export type User = z.infer<typeof userSchema>\r\n \r\n-export const userListSchema = z.array(userSchema)\r\n+export const userListSchema = z.array(userSchema)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1740972764393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,8 @@\n // Define the user schema with the updated status field as a boolean\r\n const userSchema = z.object({\r\n   id: z.number(),\r\n   fullName: z.string(),\r\n-  code: z.string(),\r\n   emailAddress: z.string(),\r\n   mobileNumber: z.string(),\r\n   status: z.boolean(), // Update the status field to be a boolean\r\n   createdTimestamp: z.coerce.date(),\r\n"
+                },
+                {
+                    "date": 1740972804785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   id: z.number(),\r\n   fullName: z.string(),\r\n   emailAddress: z.string(),\r\n   mobileNumber: z.string(),\r\n-  status: z.boolean(), // Update the status field to be a boolean\r\n+  enabled: z.boolean(), // Update the status field to be a boolean\r\n   createdTimestamp: z.coerce.date(),\r\n })\r\n export type User = z.infer<typeof userSchema>\r\n \r\n"
+                },
+                {
+                    "date": 1740972836538,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n // Define the user schema with the updated status field as a boolean\r\n const userSchema = z.object({\r\n   id: z.number(),\r\n   fullName: z.string(),\r\n+  alias: z.string(),\r\n   emailAddress: z.string(),\r\n   mobileNumber: z.string(),\r\n   enabled: z.boolean(), // Update the status field to be a boolean\r\n   createdTimestamp: z.coerce.date(),\r\n"
+                },
+                {
+                    "date": 1741602500554,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   fullName: z.string(),\r\n   alias: z.string(),\r\n   emailAddress: z.string(),\r\n   mobileNumber: z.string(),\r\n-  enabled: z.boolean(), // Update the status field to be a boolean\r\n+  enabled: z.boolean(), \r\n   createdTimestamp: z.coerce.date(),\r\n })\r\n export type User = z.infer<typeof userSchema>\r\n \r\n"
+                }
+            ],
+            "date": 1740971359388,
+            "name": "Commit-0",
+            "content": "import { z } from 'zod'\r\n\r\nconst userStatusSchema = z.union([\r\n  z.literal('enabled'),\r\n  z.literal('disabled'),\r\n])\r\nexport type UserStatus = z.infer<typeof userStatusSchema>\r\n\r\n\r\n\r\nconst userSchema = z.object({\r\n  id: z.string(),\r\n  firstName: z.string(),\r\n  lastName: z.string(),\r\n  username: z.string(),\r\n  email: z.string(),\r\n  phoneNumber: z.string(),\r\n  status: userStatusSchema,\r\n  createdAt: z.coerce.date(),\r\n  updatedAt: z.coerce.date(),\r\n})\r\nexport type User = z.infer<typeof userSchema>\r\n\r\nexport const userListSchema = z.array(userSchema)\r\n"
+        }
+    ]
+}

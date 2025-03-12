@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/features/users/data/data.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1740971504419,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740971536855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,35 +1,9 @@\n-import {\r\n-  IconCash,\r\n-  IconShield,\r\n-  IconUsersGroup,\r\n-  IconUserShield,\r\n-} from '@tabler/icons-react'\r\n+\r\n import { UserStatus } from './schema'\r\n \r\n export const callTypes = new Map<UserStatus, string>([\r\n   ['enabled', 'bg-teal-100/30 text-teal-900 dark:text-teal-200 border-teal-200'],\r\n   ['disabled', 'bg-neutral-300/40 border-neutral-300'],\r\n ])\r\n \r\n-export const userTypes = [\r\n-  {\r\n-    label: 'Superadmin',\r\n-    value: 'superadmin',\r\n-    icon: IconShield,\r\n-  },\r\n-  {\r\n-    label: 'Admin',\r\n-    value: 'admin',\r\n-    icon: IconUserShield,\r\n-  },\r\n-  {\r\n-    label: 'Manager',\r\n-    value: 'manager',\r\n-    icon: IconUsersGroup,\r\n-  },\r\n-  {\r\n-    label: 'Cashier',\r\n-    value: 'cashier',\r\n-    icon: IconCash,\r\n-  },\r\n-] as const\r\n+\r\n"
+                },
+                {
+                    "date": 1740981995729,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,4 @@\n-\r\n import { UserStatus } from './schema'\r\n \r\n export const callTypes = new Map<UserStatus, string>([\r\n   ['enabled', 'bg-teal-100/30 text-teal-900 dark:text-teal-200 border-teal-200'],\r\n"
+                },
+                {
+                    "date": 1740982009071,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,2 @@\n-import { UserStatus } from './schema'\r\n \r\n-export const callTypes = new Map<UserStatus, string>([\r\n-  ['enabled', 'bg-teal-100/30 text-teal-900 dark:text-teal-200 border-teal-200'],\r\n-  ['disabled', 'bg-neutral-300/40 border-neutral-300'],\r\n-])\r\n \r\n-\r\n"
+                }
+            ],
+            "date": 1740971504419,
+            "name": "Commit-0",
+            "content": "import {\r\n  IconCash,\r\n  IconShield,\r\n  IconUsersGroup,\r\n  IconUserShield,\r\n} from '@tabler/icons-react'\r\nimport { UserStatus } from './schema'\r\n\r\nexport const callTypes = new Map<UserStatus, string>([\r\n  ['enabled', 'bg-teal-100/30 text-teal-900 dark:text-teal-200 border-teal-200'],\r\n  ['disabled', 'bg-neutral-300/40 border-neutral-300'],\r\n])\r\n\r\nexport const userTypes = [\r\n  {\r\n    label: 'Superadmin',\r\n    value: 'superadmin',\r\n    icon: IconShield,\r\n  },\r\n  {\r\n    label: 'Admin',\r\n    value: 'admin',\r\n    icon: IconUserShield,\r\n  },\r\n  {\r\n    label: 'Manager',\r\n    value: 'manager',\r\n    icon: IconUsersGroup,\r\n  },\r\n  {\r\n    label: 'Cashier',\r\n    value: 'cashier',\r\n    icon: IconCash,\r\n  },\r\n] as const\r\n"
+        }
+    ]
+}

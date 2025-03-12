@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/routes/__root.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1740981437323,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740981487668,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,6 @@\n import { QueryClient } from '@tanstack/react-query'\r\n import { createRootRouteWithContext, Outlet } from '@tanstack/react-router'\r\n-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'\r\n-import { TanStackRouterDevtools } from '@tanstack/router-devtools'\r\n import { Toaster } from '@/components/ui/toaster'\r\n import GeneralError from '@/features/errors/general-error'\r\n import NotFoundError from '@/features/errors/not-found-error'\r\n \r\n@@ -13,14 +11,9 @@\n     return (\r\n       <>\r\n         <Outlet />\r\n         <Toaster />\r\n-        {import.meta.env.MODE === 'development' && (\r\n-          <>\r\n-            <ReactQueryDevtools buttonPosition='bottom-left' />\r\n-            <TanStackRouterDevtools position='bottom-right' />\r\n-          </>\r\n-        )}\r\n+        \r\n       </>\r\n     )\r\n   },\r\n   notFoundComponent: NotFoundError,\r\n"
+                }
+            ],
+            "date": 1740981437323,
+            "name": "Commit-0",
+            "content": "import { QueryClient } from '@tanstack/react-query'\r\nimport { createRootRouteWithContext, Outlet } from '@tanstack/react-router'\r\nimport { Toaster } from '@/components/ui/toaster'\r\nimport GeneralError from '@/features/errors/general-error'\r\nimport NotFoundError from '@/features/errors/not-found-error'\r\n\r\nexport const Route = createRootRouteWithContext<{\r\n  queryClient: QueryClient\r\n}>()({\r\n  component: () => {\r\n    return (\r\n      <>\r\n        <Outlet />\r\n        <Toaster />\r\n      </>\r\n    )\r\n  },\r\n  notFoundComponent: NotFoundError,\r\n  errorComponent: GeneralError,\r\n})\r\n"
+        }
+    ]
+}

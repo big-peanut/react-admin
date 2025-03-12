@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/hooks/use-users-query.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1740982761320,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1740982761320,
+            "name": "Commit-0",
+            "content": "import { useQuery } from '@tanstack/react-query'\r\nimport { fetchUsers, FetchUsersParams } from '../features/users/data/users'\r\n\r\nexport function useUsersQuery(params: FetchUsersParams = {}) {\r\n    return useQuery({\r\n        queryKey: ['users', params],\r\n        queryFn: () => fetchUsers(params),\r\n        staleTime: 5 * 60 * 1000, // Data is fresh for 5 minutes\r\n    })\r\n}"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/components/layout/team-switcher.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1740970650262,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740970678671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,19 +41,8 @@\n                 <span className='truncate text-xs'>{team.plan}</span>\r\n               </div>\r\n             </SidebarMenuButton>\r\n           ))}\r\n-          <SidebarMenuButton\r\n-            size='lg'\r\n-            className='flex items-center space-x-2 rounded-lg bg-background p-2 text-muted-foreground'\r\n-          >\r\n-            <div className='flex aspect-square size-8 items-center justify-center rounded-lg'>\r\n-              <Plus className='size-4' />\r\n-            </div>\r\n-            <div className='grid flex-1 text-left text-sm leading-tight'>\r\n-              <span className='truncate font-semibold'>Add team</span>\r\n-            </div>\r\n-          </SidebarMenuButton>\r\n         </div>\r\n       </SidebarMenuItem>\r\n     </SidebarMenu>\r\n   )\r\n"
+                },
+                {
+                    "date": 1740970689990,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,9 @@\n import * as React from 'react'\r\n-import { ChevronsUpDown, Plus } from 'lucide-react'\r\n import {\r\n   SidebarMenu,\r\n   SidebarMenuButton,\r\n   SidebarMenuItem,\r\n-  useSidebar,\r\n } from '@/components/ui/sidebar'\r\n \r\n export function TeamSwitcher({\r\n   teams,\r\n"
+                }
+            ],
+            "date": 1740970650262,
+            "name": "Commit-0",
+            "content": "import * as React from 'react'\r\nimport { ChevronsUpDown, Plus } from 'lucide-react'\r\nimport {\r\n  SidebarMenu,\r\n  SidebarMenuButton,\r\n  SidebarMenuItem,\r\n  useSidebar,\r\n} from '@/components/ui/sidebar'\r\n\r\nexport function TeamSwitcher({\r\n  teams,\r\n}: {\r\n  teams: {\r\n    name: string\r\n    logo: React.ElementType\r\n    plan: string\r\n  }[]\r\n}) {\r\n  const [activeTeam, setActiveTeam] = React.useState(teams[0])\r\n\r\n  return (\r\n    <SidebarMenu>\r\n      <SidebarMenuItem>\r\n        <div className='flex flex-col space-y-2'>\r\n          {teams.map((team) => (\r\n            <SidebarMenuButton\r\n              key={team.name}\r\n              size='lg'\r\n              className={`flex items-center space-x-2 p-2 rounded-lg ${\r\n                activeTeam.name === team.name\r\n                  ? 'bg-sidebar-accent text-sidebar-accent-foreground'\r\n                  : 'bg-sidebar-primary text-sidebar-primary-foreground'\r\n              }`}\r\n              onClick={() => setActiveTeam(team)}\r\n            >\r\n              <div className='flex aspect-square size-8 items-center justify-center rounded-lg'>\r\n                <team.logo className='size-4' />\r\n              </div>\r\n              <div className='grid flex-1 text-left text-sm leading-tight'>\r\n                <span className='truncate font-semibold'>{team.name}</span>\r\n                <span className='truncate text-xs'>{team.plan}</span>\r\n              </div>\r\n            </SidebarMenuButton>\r\n          ))}\r\n          <SidebarMenuButton\r\n            size='lg'\r\n            className='flex items-center space-x-2 p-2 rounded-lg bg-background text-muted-foreground'\r\n          >\r\n            <div className='flex aspect-square size-8 items-center justify-center rounded-lg'>\r\n              <Plus className='size-4' />\r\n            </div>\r\n            <div className='grid flex-1 text-left text-sm leading-tight'>\r\n              <span className='truncate font-semibold'>Add team</span>\r\n            </div>\r\n          </SidebarMenuButton>\r\n        </div>\r\n      </SidebarMenuItem>\r\n    </SidebarMenu>\r\n  )\r\n}"
+        }
+    ]
+}

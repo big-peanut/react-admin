@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/components/layout/nav-user.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1740975662723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740975676504,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,9 @@\n import { Link } from '@tanstack/react-router'\r\n import {\r\n   BadgeCheck,\r\n-  Bell,\r\n   ChevronsUpDown,\r\n-  CreditCard,\r\n   LogOut,\r\n-  Sparkles,\r\n } from 'lucide-react'\r\n import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'\r\n import {\r\n   DropdownMenu,\r\n"
+                }
+            ],
+            "date": 1740975662723,
+            "name": "Commit-0",
+            "content": "import { Link } from '@tanstack/react-router'\r\nimport {\r\n  BadgeCheck,\r\n  Bell,\r\n  ChevronsUpDown,\r\n  CreditCard,\r\n  LogOut,\r\n  Sparkles,\r\n} from 'lucide-react'\r\nimport { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'\r\nimport {\r\n  DropdownMenu,\r\n  DropdownMenuContent,\r\n  DropdownMenuGroup,\r\n  DropdownMenuItem,\r\n  DropdownMenuLabel,\r\n  DropdownMenuSeparator,\r\n  DropdownMenuTrigger,\r\n} from '@/components/ui/dropdown-menu'\r\nimport {\r\n  SidebarMenu,\r\n  SidebarMenuButton,\r\n  SidebarMenuItem,\r\n  useSidebar,\r\n} from '@/components/ui/sidebar'\r\n\r\nexport function NavUser({\r\n  user,\r\n}: {\r\n  user: {\r\n    name: string\r\n    email: string\r\n    avatar: string\r\n  }\r\n}) {\r\n  const { isMobile } = useSidebar()\r\n\r\n  return (\r\n    <SidebarMenu>\r\n      <SidebarMenuItem>\r\n        <DropdownMenu>\r\n          <DropdownMenuTrigger asChild>\r\n            <SidebarMenuButton\r\n              size='lg'\r\n              className='data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground'\r\n            >\r\n              <Avatar className='h-8 w-8 rounded-lg'>\r\n                <AvatarImage src={user.avatar} alt={user.name} />\r\n                <AvatarFallback className='rounded-lg'>SN</AvatarFallback>\r\n              </Avatar>\r\n              <div className='grid flex-1 text-left text-sm leading-tight'>\r\n                <span className='truncate font-semibold'>{user.name}</span>\r\n                <span className='truncate text-xs'>{user.email}</span>\r\n              </div>\r\n              <ChevronsUpDown className='ml-auto size-4' />\r\n            </SidebarMenuButton>\r\n          </DropdownMenuTrigger>\r\n          <DropdownMenuContent\r\n            className='w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg'\r\n            side={isMobile ? 'bottom' : 'right'}\r\n            align='end'\r\n            sideOffset={4}\r\n          >\r\n            <DropdownMenuLabel className='p-0 font-normal'>\r\n              <div className='flex items-center gap-2 px-1 py-1.5 text-left text-sm'>\r\n                <Avatar className='h-8 w-8 rounded-lg'>\r\n                  <AvatarImage src={user.avatar} alt={user.name} />\r\n                  <AvatarFallback className='rounded-lg'>SN</AvatarFallback>\r\n                </Avatar>\r\n                <div className='grid flex-1 text-left text-sm leading-tight'>\r\n                  <span className='truncate font-semibold'>{user.name}</span>\r\n                  <span className='truncate text-xs'>{user.email}</span>\r\n                </div>\r\n              </div>\r\n            </DropdownMenuLabel>\r\n            <DropdownMenuSeparator />\r\n            <DropdownMenuGroup>\r\n            </DropdownMenuGroup>\r\n            <DropdownMenuSeparator />\r\n            <DropdownMenuGroup>\r\n              <DropdownMenuItem asChild>\r\n                <Link to='/settings/account'>\r\n                  <BadgeCheck />\r\n                  Account\r\n                </Link>\r\n              </DropdownMenuItem>\r\n            </DropdownMenuGroup>\r\n            <DropdownMenuSeparator />\r\n            <DropdownMenuItem>\r\n              <LogOut />\r\n              Log out\r\n            </DropdownMenuItem>\r\n          </DropdownMenuContent>\r\n        </DropdownMenu>\r\n      </SidebarMenuItem>\r\n    </SidebarMenu>\r\n  )\r\n}\r\n"
+        }
+    ]
+}

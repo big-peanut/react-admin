@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/routes/_authenticated/users/index.lazy.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1740981382775,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740981578526,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { createLazyFileRoute } from '@tanstack/react-router'\r\n import Users from '@/features/users'\r\n \r\n-export const Route = createLazyFileRoute('/_authenticated/users/')({\r\n+export const Route = createLazyFileRoute('/_authenticated/admins/')({\r\n   component: Users,\r\n })\r\n"
+                }
+            ],
+            "date": 1740981382775,
+            "name": "Commit-0",
+            "content": "import { createLazyFileRoute } from '@tanstack/react-router'\r\nimport Users from '@/features/users'\r\n\r\nexport const Route = createLazyFileRoute('/_authenticated/users/')({\r\n  component: Users,\r\n})\r\n"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/features/users/components/data-table-toolbar.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1740972113283,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740972127539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,15 +37,8 @@\n                 { label: 'Disabled', value: 'disabled' },\r\n               ]}\r\n             />\r\n           )}\r\n-          {table.getColumn('role') && (\r\n-            <DataTableFacetedFilter\r\n-              column={table.getColumn('role')}\r\n-              title='Role'\r\n-              options={userTypes.map((t) => ({ ...t }))}\r\n-            />\r\n-          )}\r\n         </div>\r\n         {isFiltered && (\r\n           <Button\r\n             variant='ghost'\r\n"
+                },
+                {
+                    "date": 1740973271210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,12 +19,12 @@\n       <div className='flex flex-1 flex-col-reverse items-start gap-y-2 sm:flex-row sm:items-center sm:space-x-2'>\r\n         <Input\r\n           placeholder='Filter users...'\r\n           value={\r\n-            (table.getColumn('username')?.getFilterValue() as string) ?? ''\r\n+            (table.getColumn('fullName')?.getFilterValue() as string) ?? ''\r\n           }\r\n           onChange={(event) =>\r\n-            table.getColumn('username')?.setFilterValue(event.target.value)\r\n+            table.getColumn('fullName')?.setFilterValue(event.target.value)\r\n           }\r\n           className='h-8 w-[150px] lg:w-[250px]'\r\n         />\r\n         <div className='flex gap-x-2'>\r\n"
+                }
+            ],
+            "date": 1740972113283,
+            "name": "Commit-0",
+            "content": "import { Cross2Icon } from '@radix-ui/react-icons'\r\nimport { Table } from '@tanstack/react-table'\r\nimport { Button } from '@/components/ui/button'\r\nimport { Input } from '@/components/ui/input'\r\nimport { DataTableFacetedFilter } from './data-table-faceted-filter'\r\nimport { DataTableViewOptions } from './data-table-view-options'\r\n\r\ninterface DataTableToolbarProps<TData> {\r\n  table: Table<TData>\r\n}\r\n\r\nexport function DataTableToolbar<TData>({\r\n  table,\r\n}: DataTableToolbarProps<TData>) {\r\n  const isFiltered = table.getState().columnFilters.length > 0\r\n\r\n  return (\r\n    <div className='flex items-center justify-between'>\r\n      <div className='flex flex-1 flex-col-reverse items-start gap-y-2 sm:flex-row sm:items-center sm:space-x-2'>\r\n        <Input\r\n          placeholder='Filter users...'\r\n          value={\r\n            (table.getColumn('username')?.getFilterValue() as string) ?? ''\r\n          }\r\n          onChange={(event) =>\r\n            table.getColumn('username')?.setFilterValue(event.target.value)\r\n          }\r\n          className='h-8 w-[150px] lg:w-[250px]'\r\n        />\r\n        <div className='flex gap-x-2'>\r\n          {table.getColumn('status') && (\r\n            <DataTableFacetedFilter\r\n              column={table.getColumn('status')}\r\n              title='Status'\r\n              options={[\r\n                { label: 'Enabled', value: 'enabled' },\r\n                { label: 'Disabled', value: 'disabled' },\r\n                \r\n              ]}\r\n            />\r\n          )}\r\n          {table.getColumn('role') && (\r\n            <DataTableFacetedFilter\r\n              column={table.getColumn('role')}\r\n              title='Role'\r\n              options={userTypes.map((t) => ({ ...t }))}\r\n            />\r\n          )}\r\n        </div>\r\n        {isFiltered && (\r\n          <Button\r\n            variant='ghost'\r\n            onClick={() => table.resetColumnFilters()}\r\n            className='h-8 px-2 lg:px-3'\r\n          >\r\n            Reset\r\n            <Cross2Icon className='ml-2 h-4 w-4' />\r\n          </Button>\r\n        )}\r\n      </div>\r\n      <DataTableViewOptions table={table} />\r\n    </div>\r\n  )\r\n}\r\n"
+        }
+    ]
+}

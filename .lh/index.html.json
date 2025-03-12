@@ -1,0 +1,22 @@
+{
+    "sourceFile": "index.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1741601279833,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1741601308792,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \r\n     <!-- Open Graph / Facebook -->\r\n     <meta property=\"og:type\" content=\"website\" />\r\n     <meta property=\"og:url\" content=\"https://shadcn-admin.netlify.app\" />\r\n-    <meta property=\"og:title\" content=\"Shadcn Admin\" />\r\n+    <meta property=\"og:title\" content=\"Sandeep Admin\" />\r\n     <meta\r\n       property=\"og:description\"\r\n       content=\"Admin Dashboard UI built with Shadcn and Vite.\"\r\n     />\r\n@@ -29,9 +29,9 @@\n \r\n     <!-- Twitter -->\r\n     <meta property=\"twitter:card\" content=\"summary_large_image\" />\r\n     <meta property=\"twitter:url\" content=\"https://shadcn-admin.netlify.app\" />\r\n-    <meta property=\"twitter:title\" content=\"Shadcn Admin\" />\r\n+    <meta property=\"twitter:title\" content=\"Sandeep Admin\" />\r\n     <meta\r\n       property=\"twitter:description\"\r\n       content=\"Admin Dashboard UI built with Shadcn and Vite.\"\r\n     />\r\n"
+                }
+            ],
+            "date": 1741601279833,
+            "name": "Commit-0",
+            "content": "<!doctype html>\r\n<html lang=\"en\">\r\n  <head>\r\n    <meta charset=\"UTF-8\" />\r\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/images/favicon.svg\" />\r\n    <link rel=\"icon\" type=\"image/png\" href=\"/images/favicon.png\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n\r\n    <!-- Primary Meta Tags -->\r\n    <title>Sandeep Admin</title>\r\n    <meta name=\"title\" content=\"Sandeep Admin\" />\r\n    <meta\r\n      name=\"description\"\r\n      content=\"Admin Dashboard UI built with Shadcn and Vite.\"\r\n    />\r\n\r\n    <!-- Open Graph / Facebook -->\r\n    <meta property=\"og:type\" content=\"website\" />\r\n    <meta property=\"og:url\" content=\"https://shadcn-admin.netlify.app\" />\r\n    <meta property=\"og:title\" content=\"Shadcn Admin\" />\r\n    <meta\r\n      property=\"og:description\"\r\n      content=\"Admin Dashboard UI built with Shadcn and Vite.\"\r\n    />\r\n    <meta\r\n      property=\"og:image\"\r\n      content=\"https://shadcn-admin.netlify.app/images/shadcn-admin.png\"\r\n    />\r\n\r\n    <!-- Twitter -->\r\n    <meta property=\"twitter:card\" content=\"summary_large_image\" />\r\n    <meta property=\"twitter:url\" content=\"https://shadcn-admin.netlify.app\" />\r\n    <meta property=\"twitter:title\" content=\"Shadcn Admin\" />\r\n    <meta\r\n      property=\"twitter:description\"\r\n      content=\"Admin Dashboard UI built with Shadcn and Vite.\"\r\n    />\r\n    <meta\r\n      property=\"twitter:image\"\r\n      content=\"https://shadcn-admin.netlify.app/images/shadcn-admin.png\"\r\n    />\r\n\r\n    <!-- font family -->\r\n    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" />\r\n    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin />\r\n    <link\r\n      href=\"https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap\"\r\n      rel=\"stylesheet\"\r\n    />\r\n\r\n    <meta name=\"theme-color\" content=\"#fff\" />\r\n  </head>\r\n  <body class=\"group/body\">\r\n    <div id=\"root\"></div>\r\n    <script type=\"module\" src=\"/src/main.tsx\"></script>\r\n  </body>\r\n</html>\r\n"
+        }
+    ]
+}

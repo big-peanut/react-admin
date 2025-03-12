@@ -1,0 +1,18 @@
+{
+    "sourceFile": "README.md",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1741601316541,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1741601316541,
+            "name": "Commit-0",
+            "content": "# Sandeep Admin Dashboard\r\n\r\nAdmin Dashboard UI crafted with Shadcn and Vite. Built with responsiveness and accessibility in mind.\r\n\r\n![alt text](public/images/shadcn-admin.png)\r\n\r\nI've been creating dashboard UIs at work and for my personal projects. I always wanted to make a reusable collection of dashboard UI for future projects; and here it is now. While I've created a few custom components, some of the code is directly adapted from ShadcnUI examples.\r\n\r\n> This is not a starter project (template) though. I'll probably make one in the future.\r\n\r\n## Features\r\n\r\n- Light/dark mode\r\n- Responsive\r\n- Accessible\r\n- With built-in Sidebar component\r\n- Global Search Command\r\n- 10+ pages\r\n- Extra custom components\r\n\r\n## Tech Stack\r\n\r\n**UI:** [ShadcnUI](https://ui.shadcn.com) (TailwindCSS + RadixUI)\r\n\r\n**Build Tool:** [Vite](https://vitejs.dev/)\r\n\r\n**Routing:** [TanStack Router](https://tanstack.com/router/latest)\r\n\r\n**Type Checking:** [TypeScript](https://www.typescriptlang.org/)\r\n\r\n**Linting/Formatting:** [Eslint](https://eslint.org/) & [Prettier](https://prettier.io/)\r\n\r\n**Icons:** [Tabler Icons](https://tabler.io/icons)\r\n\r\n## Run Locally\r\n\r\nClone the project\r\n\r\n```bash\r\n  git clone https://github.com/satnaing/shadcn-admin.git\r\n```\r\n\r\nGo to the project directory\r\n\r\n```bash\r\n  cd shadcn-admin\r\n```\r\n\r\nInstall dependencies\r\n\r\n```bash\r\n  pnpm install\r\n```\r\n\r\nStart the server\r\n\r\n```bash\r\n  pnpm run dev\r\n```\r\n\r\n## Author\r\n\r\nCrafted with 🤍 by [@satnaing](https://github.com/satnaing)\r\n\r\n## License\r\n\r\nLicensed under the [MIT License](https://choosealicense.com/licenses/mit/)\r\n"
+        }
+    ]
+}
